@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+	<title>Form - Lab13</title>
+	<meta charset="UTF-8">
+    <link href="form.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+	<header id="form_header">
+		<h1>Fill out the form below</h1>
+	</header>
+
+	<section id="sec_form">
+		<form action="http://itu.lewebcafe.com/csc525/form.php" method="post" id="form">
+				<label> First Name <input type="text" name="f_name" id="f_name" size="40" maxlength="13"></label><br>
+				<label> Last Name <input type="text" name="l_name" size="40" maxlength="20"></label><br>
+				<label> Address <input type="text" name="address" size="70"></label><br>
+				<label> Email <input type="email" name="youremail" id="youremail" size="40"></label><br>
+				<label> Phone Number <input type="tel" name="your_number" id="your_number"></label><br>								
+				<label> What's your website? <input type="url" name="your_site" id="your_site" size="40"></label><br>
+				<label> Choose a color <input type="color" name="your_color" id="your_color"></label><br>
+				<label> Choose 1 sport<input type="text" name="my_sport" id="my_sport" list="sports">
+						<datalist id="sports"> 
+							<option value="basketball">Basketball</option>
+							<option value="Soccer">Soccer</option>
+							<option value="Football">Football</option>
+							<option value="Rugby">Rugby</option>
+							<option value="Volleyball">Volleyball</option>
+							<option value="Tennis">Tennis</option>
+						</datalist>
+				</label>
+				<br>
+				<label> Graduation Day <input type="date" name="your_date" id="your_id"></label> <br>
+					<fieldset>
+						<legend> Additional Info</legend>
+							<textarea name="comments" rows="5" cols="30"> Type your comments </textarea><br>		
+					</fieldset><br>
+			<input type="submit" value="submit" class="button"><br>
+			<input type="reset" value="reset" class="button">
+		</form>
+	</section>	
+
+</body>
+</html>
+

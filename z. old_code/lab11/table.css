@@ -1,0 +1,52 @@
+/*CSS document for Lab11*/
+
+table {
+
+	width:80%;
+	height:80%;
+
+}
+
+table, th, td {
+
+	border:1.5px solid;
+	border-bottom-color: blue;
+	border-top-color: red;
+	border-left-color: black;
+	border-right-color: green;
+	font-family: sans-serif;
+	text-align: center;
+	border-spacing: 20px 20px; 
+	padding: 20px px 20px 1px;
+
+}
+
+table {
+	border-collapse: collapse;
+}
+
+th {
+	font-weight: bold;
+	width:1px;
+
+}
+
+td {
+	width:1px;
+}
+
+.row_bg {
+	background-color: #ccddff;
+
+}
+
+caption {
+	background: #4d88ff;
+  	font-weight: bold;
+  	font-size: 1.1em;
+	font-family: sans-serif;
+	caption-side: top;
+	text-align: center;
+	padding: .2em .8em;
+
+}

@@ -1,0 +1,175 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <style type="text/css">
+            html {
+                background: #f8f8f8;
+            }
+            body {
+                margin: 16px 40px;
+                width: 400px;
+                font-family: Roboto, Helvetica, sans-serif;
+            }
+            .todo-controls {
+                border-top: 1px solid #888;
+                border-bottom: 1px solid #bbb;
+                padding: 8px 16px;
+                margin-bottom: 16px;
+                text-align: center;
+            }
+            .todo-controls > button {
+                padding: 8px;
+            }
+            .todo-list-area {
+                border-bottom: 1px solid #888;
+                padding: 8px 16px;
+            }
+            .todo-list {
+                list-style: none outside;
+                margin: 0 0 16px 0;
+                padding: 0;
+            }
+            .todo-item {
+                padding: 4px 0;
+                height: 32px;
+                line-height: 32px;
+                background: #fcfcfc;
+            }
+            .todo-item.add {
+                margin-top: 8px;
+                border-top: 1px solid #ddd;
+            }
+            .todo-item.done .todo-item--description {
+                text-decoration: line-through;
+                color: #999;
+            }
+            .todo-item:nth-child(2n+1) {
+                background: #eee;
+            }
+            .todo-item--check-area {
+                float: left;
+                box-sizing: border-box;
+                width: 20%;
+                text-align: center;
+                padding: 2px 8px;
+            }
+            .todo-item--check-area > label {
+                display: block;
+                width: 100%;
+                text-align: center;
+                height: 28px;
+                line-height: 28px;
+                vertical-align: middle;
+                
+            }
+            .todo-item--check-area > label:hover {
+                background: #e0e0e0;
+                cursor: pointer;
+            }
+            .todo-item--description {
+                float: left;
+                width: 60%;
+                height: inherit;
+                line-height: inherit;
+                vertical-align: middle;
+            }
+            .todo-item--action {
+                float: left;
+                width: 20%;
+                text-align: center;
+                height: inherit;
+                line-height: inherit;
+                vertical-align: middle;
+            }
+            .todo-list--status{
+                height: 40px;
+                line-height: 40px;
+                padding-top: 8px;
+                border-top: 1px solid #bbb;
+                text-align: center;
+                vertical-align: middle;
+                font-size: 14px;
+            }
+            .todo-list--status-total {
+                float: left;
+                width: 50%;
+                height: inherit;
+                line-height: inherit;
+                vertical-align: inherit;
+            }
+            .todo-list--status-total-undone {
+                float: left;
+                width: 50%;
+                height: inherit;
+                line-height: inherit;
+                vertical-align: inherit;
+                color: #ba3232;
+            }
+        </style>
+    </head>
+    
+    <body>
+        <h2>TODOs</h2>
+        
+        <div class="todo-controls">
+            <button class="js-todo-control mark-all-done">Done All</button>
+            <button class="js-todo-control delete-all-done">Delete All Done</button>
+            | <button class="js-todo-control delete-all">Delete All</button>
+        </div>
+        
+        <!-- template will fill this area -->
+        <div id="todo-list-container" class="todo-list-area"></div>
+
+        <script src="script.js"></script>
+        <script src="ui.js"></script>
+
+        <!-- templates -->
+        <script type="text/x-template" id="template-todo-list">
+            <ul class="todo-list">{list_content}</ul>
+        </script>
+
+        <script type="text/x-template" id="template-todo-item">
+            <li class="todo-item {done_class}" data-todo-id="{id}">
+                <div class="todo-item--check-area">
+                    <label for="todo-item-{id}">
+                        <input type="checkbox" id="todo-item-{id}" class="js-todo-item-done" {done}>
+                    </label>
+                </div>
+                
+                <div class="todo-item--description">
+                    <span class="todo-item--description-text">{description}</span>
+                </div>
+                
+                <div class="todo-item--action">
+                    <button class="js-todo-item-delete">Delete</button>
+                </div>
+            </li>
+        </script>
+        
+        <script type="text/x-template" id="template-todo-add">
+            <li class="todo-item add"">
+                <div class="todo-item--check-area"></div>
+                
+                <div class="todo-item--description">                   
+                    <input type="text" class="todo-item--description-add js-todo-item-add-input" autofocus>
+                </div>
+                
+                <div class="todo-item--action">
+                    <button class="js-todo-item-add">Add</button>
+                </div>
+            </li>
+        </script>
+
+        <script type="text/x-template" id="template-todo-status">
+            <div class="todo-list--status">
+                <div class="todo-list--status-total">
+                    <strong>{total_todos}</strong> todos
+                </div>
+
+                <div class="todo-list--status-total-undone">
+                    <strong>{total_not_done}</strong> to be done
+                </div>
+            </div>
+        </script>
+    </body>
+</html>

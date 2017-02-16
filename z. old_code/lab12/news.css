@@ -1,0 +1,60 @@
+/*This is the CSS for lab 12*/
+
+body {
+	font-family: sans-serif;
+	
+	
+}
+
+.round-box {
+	background-color: #eee;
+	margin: auto;
+	border-radius: 10px;
+	text-align: center;
+	width: 80%;
+	border: 3px solid;
+	padding:50px;
+	background-image: url(aplle-logo.png), url(background1.png);
+	background-repeat: no-repeat, no-repeat;
+	background-position:top left, left top;
+	background-size: 150px, 1678px;
+	
+}
+
+.grad-box {
+	display:block;
+	margin: 15px;
+	padding: 5px;
+	color: blue;
+	border-radius: 10pxpx;
+	text-shadow: 1px 1px 3px #999;
+	box-shadow: 2px 2px 3px 4px #999;
+	opacity: 0.8;
+	text-align: left;
+	background: grey; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(grey, yellow); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(grey, yellow); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(grey, yellow); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(grey, yellow); /* Standard syntax (must be last) */
+	
+	
+	
+}
+
+.grad-box2 {
+	display:block;
+	margin:15px;
+	padding:5px;
+	color:red;
+	border-radius:10px;
+	text-shadow: 1px 1px 2px #000000;
+	box-shadow: 3px 3px 3px 5px grey;
+	opacity: 0.7;
+	text-align:left;
+	background: #2d5986; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(#2d5986, #df9fdf); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#2d5986, #df9fdf); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#2d5986, #df9fdf); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#2d5986, #df9fdf); /* Standard syntax (must be last) */
+	
+}

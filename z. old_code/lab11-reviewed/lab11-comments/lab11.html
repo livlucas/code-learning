@@ -1,0 +1,150 @@
+<!--
+	Eu percebi que você tem usado o doctype vazio quase sempre.
+	O correto para html 5 seria <!DOCTYPE html>
+	dá uma olhada nesse link:
+	https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5/Introduction_to_HTML5
+-->
+<!DOCTYPE>
+
+<html lang="en">
+
+<head>
+    <title>Daily Activities Table</title>
+    <meta charset="UTF-8">
+    <link href="table.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+	<header>
+		<h1 align="center"> Daily Activities Table</h1>
+		<!-- problema: align. 
+			align é um atributo puramente criado para estilo.
+			então você não deveria utilizá-lo. Ao invés disso,
+			use css para centralizar seu texto.
+		-->
+
+	</header>
+
+	<!--
+		sobre a tabela:
+			existem dois elementos na tabela que poderiam ter sido utilizados
+			no seu exemplo abaixo:
+				thead
+				tbody
+			Eles delimitam a parte da tabela que é cabeçalho e a parte que é
+			conteúdo.
+			Você pode omitir, como você fez, mas sempre que você for criar
+			uma tabela com cabeçalho, utilize thead e tbody.
+			Isso melhor a semantica da sua tabela. 
+			(tem um exemplo nas modificações que eu fiz)
+	-->
+	<table>
+	<caption>Daily Activities - Lab11 </caption>
+		<tr class="row_bg">
+			<th colspan="1">Time</th>
+			<!--
+				colspan="1" é o padrão. se é isso que você quer, basta omitir o atributo.
+				tente evitar ao máximo usar atributos com valores padrão
+			-->
+			<th>Activity</th>
+		</tr>
+		<!-- 
+			aqui tem um erro: dois <tr><tr> seguidos.
+			se você abrir o seu html, você vai perceber um espaço entre o header e a primeira divisão
+			do dia na sua tabela. esse espaço é por causa desse <tr> aberto. Como <tr> não pode ser aninhado,
+			assim que o browser encontra outro <tr> ele fecha o anterior.
+			Seu html no final fica: <tr></tr><tr bgcolor="yellow">
+
+			outro problema: bgcolor. Nunca utilize atributos html para estilizar sua página. Isso
+			é trabalho do CSS e não do HTML. sempre que você quiser fazer algo do tipo, crie uma classe
+			css. style é o limite máximo permitido em casos muito específicos, todos os outros atributos
+			de estilo não devem ser usados pois misturam duas responsabilidades dentro do HTML.
+			Lembra sempre que:
+				HTML -> semantica do documento
+				CSS -> estilo do documento
+		-->
+		<tr><tr bgcolor="yellow">
+			<th colspan="2">Morning Schedule</th>
+		</tr>
+		<tr>
+			<!-- 
+				por que você utilizou "am" aqui e não nos outros horários?
+				Ou você usa am em todos os horários, ou você simplesmente não usa.
+				Lembra de sempre manter a consistência na apresentação dos dados.
+				Apesar de isso ser um exercício, pense sempre que você tá criando
+				sua página para outra pessoa ler, então é seu trabalho fazer a leitura
+				e assimilação do conteúdo o mais fácil possível.
+
+				em relação aos widths: você utilizou isso para fazer a coluna dos horários
+				ficar menor em relação a coluna de atividades?
+				se essa foi a intenção, isso não funcionou porque o seu css seta widths
+				para o td, o que faz com que os atributos sejam ignorados.
+				De qualquer forma, não utilize width, isso é papel do css.
+			-->
+			<td width="30%">05h30am</td>
+			<td width="70%">Wake up</td>
+		</tr>
+		<tr class="row_bg">
+			<td>05h40</td>
+			<td>Have breakfast</td>
+		</tr>
+		<tr>
+			<td>06h00</td>
+			<td>Take bart to SF</td>
+		</tr> 
+		<tr class="row_bg">
+			<td>07h00</td>			
+			<td>Workout</td>
+		</tr>
+		<tr>
+			<td>08h00</td>
+			<td>Take a shower</td>
+		</tr>
+		<tr class="row_bg">
+			<td>08h30</td>
+			<td>Get to work</td>
+		</tr>
+		<tr bgcolor="yellow"> <!-- mesmo problema: bgcolor (só lembrando) -->
+			<th colspan="2">Afternoon Schedule</th>
+		</tr>
+		<tr>
+			<td>12h00</td>
+			<td>Have lunch</td>
+		</tr>
+		<tr class="row_bg">
+			<td rowspan="2">3h30pm</td>
+			<td>Head to ITU</td>	
+		</tr>
+		<tr>
+		
+			<td>Grab food</td>
+		</tr>
+		<tr bgcolor="yellow">
+			<th colspan="2">Night Schedule</th>
+		</tr>
+		<tr class="row_bg">
+			<td>06h00pm</td>
+			<td>Class starts</td>
+		</tr>
+		<tr>
+			<td>10h00pm</td>
+			<td>Drive home</td>
+		</tr>
+		<tr class="row_bg">
+			<td>10h40pm</td>
+			<td>Have dinner</td>
+		</tr>
+		<tr>
+			<td>10h55</td>
+			<td>Take a shower</td>
+		</tr>
+		<tr class="row_bg">
+			<td>11hpm</td>
+			<!-- você esqueceu de completar com 00 -> 11h00pm
+				lembre sempre de manter consistência -->
+			<td>Go to sleep!</td>
+		</tr>
+	</table>
+
+</body>
+</html>

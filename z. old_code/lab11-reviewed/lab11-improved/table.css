@@ -1,0 +1,90 @@
+/*CSS document for Lab11*/
+
+body {
+	font-family: sans-serif;
+	/* 
+	manter a font-family padrão no body é uma boa prática.
+	você pode sobreescrever depois no seletor específico
+	*/
+}
+
+.centered-text {
+	text-align: center;
+}
+
+#daily-activities {
+	margin: 0 auto; /* centralizar a tabela para ficar alinhada com o título */
+	width: 80%;
+	border-collapse: collapse;
+	table-layout: fixed; /* faz com que as celulas tenham mesmo tamanho */
+}
+
+#daily-activities caption {
+	background: #4d88ff;
+  	font-weight: bold;
+  	font-size: 1.1em;
+	font-family: sans-serif;
+	caption-side: top;
+	text-align: center;
+	padding: 5px;
+}
+
+#daily-activities thead tr {
+	background: #86AFFF;
+	color: #444444;
+}
+
+/*
+	Isso a seguir é uma prática avançada para fazer linha zebradas.
+	https://developer.mozilla.org/en-US/docs/Web/CSS/:nth-child
+
+	foi só pra te mostrar que existe um jeito mais fácil de fazer
+	linhas zebradas em uma tabela sem ter que marcar o html com 
+	as classes certas. (mas o seu jeito é completamente correto e válido)
+*/
+#daily-activities tbody tr:nth-child(odd) {
+	background: #ccddff;
+}
+
+#daily-activities th, 
+#daily-activities td {
+	border: 1px solid;
+	border-bottom-color: blue;
+	border-top-color: gray;
+	border-left-color: black;
+	border-right-color: green;
+	
+	text-align: center;
+	border-spacing: 10px; 
+	padding: 10px 0;
+}
+
+#daily-activities th {
+	font-weight: bold;
+}
+
+/* 
+	as divisões dos períodos do dia dentro do body
+	o ideal seria utilizar uma class para isso, porém eu quis
+	mostrar como é possível usar a estrutura para selecionar um
+	tag específica. 
+		o <th> dentro de <tbody> dentro de #daily-activities
+	(não que isso seja a melhor prática, mas é um conhecimento importante)
+*/
+#daily-activities tbody th {
+	background: #FFF359;
+}
+
+
+/*
+	BONUS
+	pra ver uma coisa legal, descomenta o código abaixo e passa o mouse na sua tabela.
+	depois, tenta me explicar o que aconteceu.
+*/
+
+
+#daily-activities tr:hover td {
+	background: #86AFFF;
+}
+
+

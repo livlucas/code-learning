@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<style type="text/css">
+    html {
+        background: #f8f8f8;
+        font-family: Roboto, Helvetica;
+    }
+    body {
+       width: 302px;
+       margin: 32px auto;
+    }
+    
+    .tictactoe-line {
+        width: 300px;
+        height: 100px;
+        border: 1px solid #999;
+    }
+    .tictactoe-square {
+        float: left;
+        width: 100px;
+        height: 100px;
+        line-height: 100px;
+        vertical-align: middle;
+        text-align: center;
+        box-sizing: border-box;
+        border: 1px solid #999;
+        font-size: 60px;
+        color: #66F;
+    }
+    .tictactoe-winner-panel {
+        height: 60px;
+        font-size: 18px;
+        text-align: center;
+        line-height: 60px;
+        vertical-align: middle;
+    }
+    .tictactoe-controls {
+        text-align: center;
+    }
+</style>
+<script src="script.js"></script>
+<script src="ui.js"></script>
+
+<!-- templates -->
+<script type="text/x-template" id="template-line">
+    <div class="tictactoe-line" data-line="{line_number}">{line_content}</div>
+</script>
+
+<script type="text/x-template" id="template-square">
+    <div class="tictactoe-square" data-column="{column_number}">{square_content}</div>
+</script>
+
+<script type="text/x-template" id="template-winner-panel">
+    <div class="tictactoe-winner-panel">{winner_content}</div>
+</script>
+
+<script type="text/x-template" id="template-restart-panel">
+    <div class="tictactoe-controls">
+        <button class="tictactoe-restart-game">Restart Game</button>
+    </div>
+</script>

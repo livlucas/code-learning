@@ -1,0 +1,146 @@
+/*CSS document for Lab11*/
+
+/*
+	NOTAS:
+		quando você estiver criando um estilo pra um elemento específico,
+		nunca utiliza o nome da tag como seletor. No seu css, você usou
+		"table" como seletor. E isso é meio problematico. Imagine que você
+		precisasse fazer outra table na sua página, ela seria afetada por
+		todas as regras da sua primeira table.
+
+		Sempre que você estiver aplicando regras para um tipo de tabela único,
+		utilize seletores por ID ou por Classe.
+
+		Nesse exercício, o ideal seria utilizar um ID na table e usar ele no
+		seu css. (tem exemplo no modificado)
+
+		depois disso, basta manter todos os outros seletores dentro do id.
+		por exemplo:
+			html (suponha que) 
+				<table id="activities-table">...</table>
+
+			css
+			#activities-table {
+				//regras para a tabela
+			}
+
+			#activities-table td {
+				//regras para todo <td> que está dentro de #activities-table
+				//porém, outros <td>'s de outras <table>'s não são afetados
+			}
+
+			#activities-table caption {...}
+			//mesma ideia
+*/
+
+/*
+	você tem dois seletores iguais. dois "table {...}"
+	sempre que isso for o caso, por favor una todas as regras dentro
+	do mesmo seletor
+*/
+table {
+
+	width:80%;
+	height:80%;
+	/* 
+		não faz sentido utilizar height aqui, a tabela vai crescer de acordo com seus elementos 
+		e ignorar esse atributo. qual era a ideia desse height? 
+	*/
+
+}
+
+table, th, td {
+
+	
+	border:1.5px solid;
+	/* nunca utilize pixel com valor fracionado. 
+	Não existe meio pixel, ou são 2 ou 1. Porém, atualmente os displays
+	de alta densidade "conseguem" renderizar pixels fracionados. Porque o
+	mapa de pixels não é exatamente 1 pixel virtual -> 1 pixel físico.
+	Em outros casos, o pixel fracionado pode ser usado para renderizar "subpixels"
+	https://en.wikipedia.org/wiki/Subpixel_rendering
+
+	Em todo caso, usar pixel fracionado diretamente não é coerente. pois você não pode 
+	pedir pro browser fazer algo com 11.5px de largura, por exemplo. Dependendo do browser
+	ele pode arredondar pra cima ou pra baixo. Então, evite usar pixel fracionado.
+
+	Obviamente, você pode especificar valores em outras unidades ou em %
+	Essas unidades vão ser convertidas em pixel antes de serem renderizadas
+	pelo browser. Nesse caso, elas provavelmente vão se utilizar de pixel fracionado
+	na unidade convertida, mas tudo isso é apenas uma consequencia do calculo que o
+	próprio browser faz em relação a área e display. Isso é totalmente
+	normal e faz sentido, já que sua regra pediu por valores "relativos".
+	Agora especificar diretamente pixel fracionado não é uma boa
+	prática, pois pixel é um valor "absoluto" e deveria ser claro quanto a intenção.
+
+	se quiser entender melhor as unidades de medida, leia aqui:
+	https://developer.mozilla.org/en-US/docs/Web/CSS/length
+
+	se quiser conversar mais sobre pixel e resolucão de displays, só falar =]
+	*/
+
+	border-bottom-color: blue;
+	border-top-color: red;
+	border-left-color: black;
+	border-right-color: green;
+	font-family: sans-serif;
+	text-align: center;
+	border-spacing: 20px 20px; 
+	padding: 20px px 20px 1px;
+	/* erro no css, tem um px sem escalar ali ó =P */
+
+}
+
+
+table {
+/*
+	seletor repetido! com eu citei, isso é uma prática ruim, pois quando você estiver lendo um css,
+	o fato de você ter encontrado um seletor, pode te fazer acreditar que todas
+	as regras estão nele. se existir outro seletor igual perdido no css, pode ser
+	difícil descobrir sem procurar pelo seletor ou rodar o css inteiro.
+	Lembre do seu "eu do futuro". Quando você tiver que reler seu css, sempre bom que
+	ele esteja organizado, pra quando você esquecer como era, conseguir entender rápido e
+	sem esforço.
+*/
+	border-collapse: collapse;
+}
+
+
+th {
+	font-weight: bold;
+	width:1px;
+}
+/*
+	não entendi o que você queria fazer com width: 1px
+	se você queria que as colunas tivessem tamanhos iguais fazendo isso,
+	bastaria você remover os atributos "width" do seu html.
+*/
+
+td {
+	width:1px;
+}
+
+.row_bg {
+	background-color: #ccddff;
+
+}
+
+caption {
+	background: #4d88ff;
+  	font-weight: bold;
+  	font-size: 1.1em;
+	font-family: sans-serif;
+	/*
+		não seria necessário utilizar font-family aqui, pois é a mesma que você utilizou
+		na tabela. então como caption está dentro do table, ele herda a font-family.
+	*/
+	caption-side: top;
+	text-align: center;
+	padding: .2em .8em;
+	/* 
+		dento das td, você utilizou um padding "px" e aqui você utilizou "em" 
+		Não que isso seja um problema, mas o ideal seria você tentar utilizar
+		unidades consistentes para mesmos tipos de regras. (a menos que a situação
+		explicitamente peça o contrário, o que não é o caso aqui =P)
+	*/
+}

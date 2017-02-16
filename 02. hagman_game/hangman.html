@@ -1,0 +1,39 @@
+<!DOTYPE html>
+
+<style type="text/css">
+body {
+    font-family: monospace;
+    color: #333;
+    background: #f3f3f3;
+    padding: 24px 16px;
+}
+#js-guessing {
+    height: 32px;
+    line-height: 30px;
+    vertical-align: middle;
+    font-size: 30px;
+    margin-bottom: 12px;
+}
+#js-wrong-guesses {
+    height: 24px;
+    line-height: 24px;
+    vertical-align: middle;
+    font-size: 20px;
+    margin-bottom: 24px;
+    color: #992211;
+}
+</style>
+
+<script src="hangman.js"></script>
+<script src="run_game.js"></script>
+
+<h1>HANGMAN</h1>
+
+<div id="js-guessing"></div>
+
+<div id="js-wrong-guesses"></div>
+
+<form action="" id="js-form-guess">
+    <label for="js-guess">Guess a Letter</label>
+    <input id="js-guess" type="text" maxlength="1" autofocus style="width: 24px; text-align: center">
+</form>
